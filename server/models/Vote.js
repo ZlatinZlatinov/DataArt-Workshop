@@ -3,12 +3,14 @@ const { Schema, model } = require('mongoose');
 const voteSchema = new Schema({
     value: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     }, 
     label : {
         type: String,
-        required: true
-    }
+        required: true,
+        enum: ['😂', '👍', '❤️']
+    }, 
 });
 
 const Vote = model('Vote', voteSchema);
