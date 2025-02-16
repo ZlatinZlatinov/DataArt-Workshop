@@ -11,4 +11,9 @@ const mongooseInit = async () => {
   }
 };
 
-module.exports = {mongooseInit};
+const dispatchMongoose = async () => {
+  await mongoose.connection.close();
+  console.log("Dispatching mongoose...");
+}
+
+module.exports = { mongooseInit, dispatchMongoose };
