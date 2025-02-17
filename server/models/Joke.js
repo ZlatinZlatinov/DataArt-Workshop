@@ -16,7 +16,7 @@ const jokeSchema = new Schema({
         }],
         default: ['😂', '👍', '❤️']
     },
-    votes: [{ type: Schema.Types.ObjectId, ref: 'Vote' }]
+    votes: []
 });
 
 const Joke = model('Joke', jokeSchema);

@@ -23,6 +23,7 @@ jokeController.post('/:jokeId', async (req, res) => {
         await submitVote(jokeId, label);
         res.status(201).end();
     } catch (err) {
+        console.error(err);
         res.status(400).end();
     }
 });

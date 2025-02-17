@@ -11,17 +11,25 @@ async function createJoke(payload) {
 
 async function submitVote(jokeId, label) {
     const joke = await Joke.findById(jokeId);
-    console.log(joke);
-    
-    for (let i = 0; i < joke.votes.length; i++) {
-        let vote = joke.votes[i];
 
-        if (vote.label === label) {
-            joke.votes[i].value++;
+    if (joke.votes.length > 0) {
+        for (let i = 0; i < joke.votes.length; i++) {
+            let vote = joke.votes[i];
 
-            await joke.save();
+            if (vote.label === label) {
+                vote.value += 1;
+                joke.votes[i] = vote;
+                await joke.save();
+                return;
+            }
         }
+
+        joke.votes.push({ value: 1, label });
+    } else {
+        joke.votes.push({ value: 1, label });
     }
+
+    await joke.save();
 }
 
 async function updateJoke(jokeId, question, answer) {
