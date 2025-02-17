@@ -6,7 +6,7 @@ async function seedDb() { //Probably not the best way to seed DB, but it kinda w
 
     const data = [];
     const URL = "https://teehee.dev/api/joke";
-    const SEED_COUNT = 1;
+    const SEED_COUNT = 5;
 
     for (let i = 0; i < SEED_COUNT; i++) {
         const response = await fetch(URL);
