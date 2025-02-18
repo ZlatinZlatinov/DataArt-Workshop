@@ -1,11 +1,12 @@
-export type Joke = {
+export type JokeType = {
+    _id: string,
     question: string,
     answer: string,
     votes: [Vote] | [],
     availableVotes: [avVotes]
 }
 
-type Vote = {
+export type Vote = {
     value: number,
     label: string
 }
