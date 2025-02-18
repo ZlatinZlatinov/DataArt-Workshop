@@ -16,7 +16,10 @@ const jokeSchema = new Schema({
         }],
         default: ['😂', '👍', '❤️']
     },
-    votes: []
+    votes: {
+        type: [],
+        default: [{value: 0, label:'😂'}, {value: 0, label:'👍'}, {value: 0, label:'❤️'}]
+    }
 });
 
 const Joke = model('Joke', jokeSchema);
