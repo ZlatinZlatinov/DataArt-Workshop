@@ -8,7 +8,8 @@ const {
 
 jokeController.get('/', async (req, res) => {
     try {
-        const joke = await getRandomJoke();
+        const [joke] = await getRandomJoke();
+
         res.json(joke);
     } catch (err) {
         res.status(404).end();
