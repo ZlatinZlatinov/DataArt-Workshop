@@ -32,7 +32,7 @@ A full-stack application for managing and interacting with jokes using React, No
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/joke-application.git
+git clone https://github.com/ZlatinZlatinov/DataArt-Workshop
 cd joke-application
 ```
 
