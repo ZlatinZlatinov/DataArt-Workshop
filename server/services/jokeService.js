@@ -4,6 +4,10 @@ async function getRandomJoke() { // Returns a random joke
     return Joke.aggregate([{ $sample: { size: 1 } }]);
 }
 
+async function getJokeById(jokeId) {
+    return Joke.findById(jokeId);
+}
+
 async function createJoke(payload) {
     const joke = await Joke.create(payload);
     return joke;
@@ -47,5 +51,6 @@ module.exports = {
     createJoke,
     submitVote,
     updateJoke,
-    deleteJoke
+    deleteJoke, 
+    getJokeById
 }

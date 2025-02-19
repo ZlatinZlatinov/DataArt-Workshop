@@ -3,7 +3,8 @@ const {
     getRandomJoke,
     submitVote,
     updateJoke,
-    deleteJoke
+    deleteJoke,
+    getJokeById
 } = require('../services/jokeService');
 
 jokeController.get('/', async (req, res) => {
@@ -12,6 +13,18 @@ jokeController.get('/', async (req, res) => {
 
         res.json(joke);
     } catch (err) {
+        res.status(404).end();
+    }
+}); 
+
+jokeController.get('/:jokeId', async (req, res) => {
+    const jokeId = req.params.jokeId;
+
+    try {
+        const joke = await getJokeById(jokeId);
+
+        res.json(joke);
+    } catch (err) { 
         res.status(404).end();
     }
 });
