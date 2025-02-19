@@ -40,7 +40,7 @@ export async function getJokeById(jokeId: string | undefined): Promise<JokeType>
 
 export async function updateJoke(jokeId: string | undefined, payload: inputValues): Promise<JokeType> {
     console.log(jokeId);
-    
+
     const response = await fetch(URL + `joke/${jokeId}`, {
         method: 'PUT',
         headers: {
@@ -56,4 +56,14 @@ export async function updateJoke(jokeId: string | undefined, payload: inputValue
     const data: JokeType = await response.json();
 
     return data;
+}
+
+export async function deleteJoke(jokeId: string): Promise<void> {
+    const response = await fetch(URL + `joke/${jokeId}`, {
+        method: 'DELETE'
+    });
+
+    if (!response.ok) {
+        throw new Error("Failed to delete joke!");
+    }
 }
