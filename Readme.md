@@ -47,12 +47,6 @@ cd ../client
 npm install
 ```
 
-3. Create a `.env` file in the server directory with the following variables:
-```
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/joke-app
-```
-
 ## Running the Application
 
 ### Start the Backend Server
@@ -128,4 +122,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - TeeHee Joke API for providing additional joke content
-- All contributors who have helped improve this project
