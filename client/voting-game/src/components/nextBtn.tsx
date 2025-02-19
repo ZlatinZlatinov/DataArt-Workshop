@@ -1,11 +1,4 @@
-import { useNavigate } from "react-router-dom";
+export default function NextBtn({ getNextJoke }: { getNextJoke: () =>{}}) {
 
-export default function NextBtn() {
-    const navigate = useNavigate();
-
-    function getNextJoke(): void {
-        navigate('/joke');
-    }
-
-    return <button onClick={getNextJoke}>Netx</button>;
+    return <button className="border-1 border-white min-w-2xl py-1 rounded-md hover:bg-gray-500 mt-1" onClick={getNextJoke}>NEXT</button>;
 }
