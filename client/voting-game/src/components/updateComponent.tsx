@@ -48,18 +48,18 @@ export default function UpdateComponent() {
     }
 
     return (<div className="p-4 min-w-2xl bg-gray-900 rounded-xl border-1 border-gray-900">
-        <form className="flex flex-col gap-1.5 text-lg" onSubmit={onSubmitJoke}>
-            <div>
+        <form className="flex flex-col gap-2.5 text-lg items-center" onSubmit={onSubmitJoke}>
+            <div className="w-full">
                 <label htmlFor="question">Question</label>
                 <input className="w-full bg-gray-500 p-0.5" type="text" id="question" name="question" value={inputValues.question} onChange={inputHandler} />
             </div>
 
-            <div>
+            <div className="w-full">
                 <label htmlFor="answer">Answer</label>
                 <input className="w-full bg-gray-500 p-0.5" type="text" id="answer" name="answer" value={inputValues.answer} onChange={inputHandler} />
             </div>
 
-            <button type="submit" >Update</button>
+            <button className="border-1 border-white w-1/2 py-1 rounded-md hover:bg-gray-500 mt-1" type="submit" >Update</button>
         </form>
     </div>);
 } 
