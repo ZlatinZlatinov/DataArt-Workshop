@@ -11,4 +11,9 @@ export type Vote = {
     label: string
 }
 
+export type inputValues = {
+    question: string | "" | undefined,
+    answer: string | "" | undefined
+}
+
 type avVotes = "😂" | "👍" | "❤️";
