@@ -22,7 +22,7 @@ export default function SectionComponent() {
         }
     }, []);
 
-    return (<section className="flex flex-col gap-2.5 justify-center items-center w-full h-dvh bg-gray-800">
+    return (<section className="flex flex-col gap-4 justify-center items-center w-full h-dvh bg-gray-800 px-4">
         <Routes>
             <Route path={'/joke'} element={<Joke joke={joke} />} />
             <Route path={'/update/:jokeId'} element={<UpdateComponent/>} />
