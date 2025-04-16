@@ -4,7 +4,7 @@ import { getRandomJoke } from '../services/jokeService';
 import { JokeType } from '../types/jokeType';
 import Joke from './Joke/joke';
 import NextBtn from './nextBtn';
-import UpdateComponent from './updateComponent';
+import UpdateComponent from './UpdateJoke/updateComponent';
 
 export default function SectionComponent() {
     const [joke, setJoke] = useState<JokeType>();

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getJokeById, updateJoke } from "../services/jokeService";
-import { inputValues } from "../types/jokeType";
+import { getJokeById, updateJoke } from "../../services/jokeService";
+import { inputValues } from "../../types/jokeType";
 
 export default function UpdateComponent() {
     const { jokeId } = useParams();
