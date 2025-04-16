@@ -19,14 +19,17 @@ export default function JokeInteractions({
     }
 
     return (
-        <div className="flex mt-2 justify-between">
+        <div className="flex mt-3 justify-between items-center">
             <ul className="flex text-2xl gap-2.5">
                 {votes.map((v, i) => <EmojiItem key={i} vote={v} id={id} />)} {/*Not the best idea to use index for key :( */}
             </ul>
 
-            <div>
-                <Link to={`/update/${id}`} className="border-1 border-white rounded-lg text-lg p-1 mr-2 text-white hover:bg-gray-500">Update</Link>
-                <button onClick={handleDeleteJoke} className="border-1 border-white rounded-lg text-lg p-1 mr-2 text-red-600 hover:bg-gray-500">Delete</button>
+            <div className='flex text-2xl gap-3'>
+                <Link to={`/update/${id}`} 
+                className="border border-white rounded-lg text-base px-3 py-1.5 text-white hover:bg-gray-700 transition-colors duration-200">Update</Link>
+                
+                <button onClick={handleDeleteJoke} 
+                className="border border-red-500 rounded-lg text-base px-3 py-1.5 text-red-500 hover:bg-red-500 hover:text-white transition-colors duration-200">Delete</button>
             </div>
         </div>
     );

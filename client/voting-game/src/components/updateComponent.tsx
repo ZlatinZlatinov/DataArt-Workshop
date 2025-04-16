@@ -47,19 +47,31 @@ export default function UpdateComponent() {
         }
     }
 
-    return (<div className="p-4 min-w-2xl bg-gray-900 rounded-xl border-1 border-gray-900">
-        <form className="flex flex-col gap-2.5 text-lg items-center" onSubmit={onSubmitJoke}>
+    return (<div className="p-6 w-full max-w-2xl bg-gray-900 rounded-xl shadow-lg border border-gray-700">
+        <form className="flex flex-col gap-4 text-lg" onSubmit={onSubmitJoke}>
             <div className="w-full">
-                <label htmlFor="question">Question</label>
-                <input className="w-full bg-gray-500 p-0.5" type="text" id="question" name="question" value={inputValues.question} onChange={inputHandler} />
+                <label htmlFor="question" className="block text-gray-300 mb-1">Question</label>
+
+                <input
+                    className="w-full bg-gray-700 p-2 rounded-md border border-gray-600 focus:border-amber-400 focus:outline-none text-white"
+                    type="text" id="question" name="question"
+                    value={inputValues.question}
+                    onChange={inputHandler} />
             </div>
 
             <div className="w-full">
-                <label htmlFor="answer">Answer</label>
-                <input className="w-full bg-gray-500 p-0.5" type="text" id="answer" name="answer" value={inputValues.answer} onChange={inputHandler} />
+                <label htmlFor="answer" className="block text-gray-300 mb-1">Answer</label>
+
+                <input
+                    className="w-full bg-gray-700 p-2 rounded-md border border-gray-600 focus:border-amber-400 focus:outline-none text-white"
+                    type="text" id="answer" name="answer"
+                    value={inputValues.answer}
+                    onChange={inputHandler} />
             </div>
 
-            <button className="border-1 border-white w-1/2 py-1 rounded-md hover:bg-gray-500 mt-1" type="submit" >Update</button>
+            <button
+                className="border border-amber-500 bg-amber-500 text-gray-900 font-medium w-full py-2 rounded-md hover:bg-amber-600 mt-2 transition-colors duration-200"
+                type="submit">Update</button>
         </form>
     </div>);
 } 
