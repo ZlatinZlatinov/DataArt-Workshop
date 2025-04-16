@@ -17,10 +17,13 @@ export default function EmojiItem({
         }
     }
 
-    return (<li>
-        <button className="hover:bg-gray-500 p-0.5" onClick={sendVote}>
+    return (<li className="flex flex-col items-center">
+        <button 
+        className="hover:bg-gray-700 p-1.5 rounded-full transition-colors duration-200" 
+        onClick={sendVote}>
             {vote?.label}
         </button>
-        <span className="text-xs text-white">{value}</span>
+
+        <span className="text-xs text-gray-300 mt-1">{value}</span>
     </li>);
 }
