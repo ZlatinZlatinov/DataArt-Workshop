@@ -1,4 +1,4 @@
 node_modules
 .vsc 
 .env 
-.docx
+*.docx
