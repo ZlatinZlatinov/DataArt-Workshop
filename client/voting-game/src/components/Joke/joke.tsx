@@ -1,5 +1,5 @@
-import { JokeType } from '../types/jokeType';
-import JokeInteractions from './jokeInteractions';
+import { JokeType } from '../../types/jokeType';
+import JokeInteractions from './jokeInteractions'
 
 export default function Joke({
     joke
