@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Vote } from "../types/jokeType";
-import { submitVote } from "../services/jokeService";
+import { Vote } from "../../types/jokeType";
+import { submitVote } from "../../services/jokeService";
 
 export default function EmojiItem({
     vote, id

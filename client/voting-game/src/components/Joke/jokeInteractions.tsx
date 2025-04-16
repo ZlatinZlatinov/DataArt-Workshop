@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { Vote } from '../types/jokeType';
+import { Vote } from '../../types/jokeType';
 import EmojiItem from './emojiItem';
-import { deleteJoke } from '../services/jokeService';
+import { deleteJoke } from '../../services/jokeService';
 
 export default function JokeInteractions({
     votes, id
