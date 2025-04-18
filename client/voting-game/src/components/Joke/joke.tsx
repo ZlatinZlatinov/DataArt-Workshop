@@ -3,13 +3,12 @@ import JokeInteractions from './jokeInteractions'
 import { JokeContext } from '../../contexts/jokeContext';
 import { getRandomJoke } from '../../services/jokeService';
 
-//TODO: Something is causing too many re-renders
 export default function Joke() {
     const { joke, handleGetNewJoke } = useContext(JokeContext);
 
     useEffect(() => {
         getNewJoke();
-    }, [joke._id]);
+    }, []);
 
     async function getNewJoke() {
         try {
@@ -26,6 +25,6 @@ export default function Joke() {
             <p className="text-red-800 text-2xl">A: {joke?.answer || '...'}</p>
         </div>
 
-        {joke._id ? <JokeInteractions votes={joke.votes}/> : <>Loading...</>}
+        {joke._id ? <JokeInteractions votes={joke.votes} /> : <>Loading...</>}
     </div>);
 }
