@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Vote } from "../../types/jokeType";
 import { submitVote } from "../../services/jokeService";
 import { JokeContext } from "../../contexts/jokeContext";
