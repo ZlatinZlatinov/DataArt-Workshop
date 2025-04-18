@@ -1,29 +1,28 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Vote } from "../../types/jokeType";
 import { submitVote } from "../../services/jokeService";
+import { JokeContext } from "../../contexts/jokeContext";
 
-export default function EmojiItem({
-    vote, id
-}: { vote: Vote, id: string }) {
-    const [value, setValue] = useState(vote.value);
+export default function EmojiItem({ vote }: { vote: Vote }) {
+    const { joke, handleAddVote } = useContext(JokeContext);
 
     async function sendVote() {
-        const result = await submitVote(id, vote.label);
+        const result = await submitVote(joke._id, vote.label);
 
         if (result) {
-            setValue((old) => old + 1);
+            handleAddVote(vote.label);
         } else {
             alert("Voting failed!");
         }
     }
 
     return (<li className="flex flex-col items-center">
-        <button 
-        className="hover:bg-gray-700 p-1.5 rounded-full transition-colors duration-200" 
-        onClick={sendVote}>
+        <button
+            className="hover:bg-gray-700 p-1.5 rounded-full transition-colors duration-200"
+            onClick={sendVote}>
             {vote?.label}
         </button>
 
-        <span className="text-xs text-gray-300 mt-1">{value}</span>
+        <span className="text-xs text-gray-300 mt-1">{vote.value}</span>
     </li>);
 }
