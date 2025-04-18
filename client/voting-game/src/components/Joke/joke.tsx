@@ -3,6 +3,7 @@ import JokeInteractions from './jokeInteractions'
 import { JokeContext } from '../../contexts/jokeContext';
 import { getRandomJoke } from '../../services/jokeService';
 
+//TODO: Something is causing too many re-renders
 export default function Joke() {
     const { joke, handleGetNewJoke } = useContext(JokeContext);
 
